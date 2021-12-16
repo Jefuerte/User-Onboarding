@@ -34,4 +34,20 @@ describe('User Onboarding App', () => {
 
         tosInput().check()
     })
+    it('invalid text', () => {
+        emailInput().type('invalid email')
+        cy.contains('your email is invalid')
+        passwordInput().type('ab')
+        cy.contains('password is too short')
+        
+    })
+    it('Submission', () => {
+        nameInput().type('Peter Parker')
+        emailInput().type('spideyboy@gmail.com')  
+        passwordInput().type('IronmanForever')
+        tosInput().check()
+        subButton().click()
+        //cy.contains('Peter Parker')
+        cy.contains('spideyboy@gmail.com')
+    })
 })
