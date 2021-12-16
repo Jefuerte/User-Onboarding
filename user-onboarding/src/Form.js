@@ -3,7 +3,7 @@ import React from 'react';
 
 const Form = (props) => {
     const { change, submit, errors } = props;
-    const { username, email, password, tos } = props.values;
+    const { username, email, password, tos, disabled } = props.values;
 
 
     const onChange = (evt) => {
@@ -54,9 +54,7 @@ const Form = (props) => {
                     onChange={onChange}
                     />
                 </label>
-                <input type="submit"
-                value="Create a Friend" 
-                />
+                <button id='submit' disabled={disabled}>submit</button>
             </form>
         </div>
     )
